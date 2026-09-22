@@ -13,7 +13,7 @@ def subnet(network):
 def network_based(network, net_req):
     net = ipaddress.ip_network(network)
     pwr = 0
-    while 2**pwr < net_req:      # strict <
+    while 2**pwr < net_req:      
         pwr += 1
     # pwr is now the number of bits to add
     subnets = list(net.subnets(prefixlen_diff=pwr))
